@@ -27,6 +27,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
+
               }
             ],
             "styles": [
@@ -94,5 +95,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "46f075bd-6b25-43c9-94a2-e3bf322f62e2"
   }
 }
