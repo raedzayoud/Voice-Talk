@@ -12,4 +12,8 @@ export class Login {
   navigateToRegister() {
     this.router.navigate(['singup']);
   }
+
+  Login() {
+    this.router.navigate(['home']);
+  }
 }
