@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-singup',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './singup.html',
-  styleUrl: './singup.scss'
+  styleUrl: './singup.scss',
 })
-export class Singup {
-
-}
+export class Singup {}

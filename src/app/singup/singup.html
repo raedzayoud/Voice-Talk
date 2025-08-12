@@ -1,1 +1,63 @@
-<p>singup works!</p>
+<div class="signup-all">
+  <div class="signup-container">
+    <h2>Sign Up</h2>
+
+    <form>
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm your password"
+          required
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Sign Up</button>
+
+      <!-- Link to Login -->
+      <p class="login-link">
+        <a routerLink="/login"> Already have an account? Login here</a>
+      </p>
+    </form>
+  </div>
+</div>
