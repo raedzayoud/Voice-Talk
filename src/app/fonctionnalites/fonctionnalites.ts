@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { Menu } from '../menu/menu';
 
 @Component({
   selector: 'app-fonctionnalites',
-  imports: [],
+  imports: [Menu],
   templateUrl: './fonctionnalites.html',
-  styleUrl: './fonctionnalites.scss'
+  styleUrl: './fonctionnalites.scss',
 })
-export class Fonctionnalites {
-
-}
+export class Fonctionnalites {}
