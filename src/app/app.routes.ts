@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import { Singup } from './singup/singup';
-import { Login } from './login/login';
+import { Singup } from './auth/singup/singup';
+import { Login } from './auth/login/login';
 import { Home } from './home/home';
+import { Fonctionnalites } from './fonctionnalites/fonctionnalites';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -16,5 +17,9 @@ export const routes: Routes = [
   {
     path: 'home',
     component: Home,
+  },
+  {
+    path: 'fonctionnalites',
+    component: Fonctionnalites,
   },
 ];

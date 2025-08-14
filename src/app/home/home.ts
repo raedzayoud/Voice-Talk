@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Menu } from '../menu/menu';
-import { About } from '../about/about';
+import { About } from '../acceuil/about/about';
 
 @Component({
   selector: 'app-home',
