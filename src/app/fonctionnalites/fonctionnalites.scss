@@ -2,7 +2,6 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #343a40;
-  background-color: #f8f9fa;
   width: 100%;
 }
 
@@ -74,14 +73,98 @@ h2 {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 2rem;
+    font-size: 1.35rem;
+  }
+  .feature-card h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1rem;
   }
 
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
   }
 
   .features-container {
     grid-template-columns: 1fr;
   }
+}
+
+.features-container-secondary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 50px;
+}
+
+.section-table {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 50px;
+  padding: 2px 0;
+  background-color: #f5f5fa;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .section-table {
+    margin: 0 20px;
+  }
+}
+
+.container-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.table-container {
+  font-family: Arial, sans-serif;
+  height: 50vh;
+  margin: 0;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 900px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th,
+td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  font-weight: bold;
+  color: #111827;
+}
+
+td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: #111827;
+}
+
+.check {
+  color: green;
+  font-size: 20px;
+}
+
+.cross {
+  color: brown;
+  font-size: 20px;
 }

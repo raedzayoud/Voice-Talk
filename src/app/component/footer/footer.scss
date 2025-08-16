@@ -1,0 +1,66 @@
+.footer,
+.footer-bottom {
+  width: 100%;
+}
+
+.footer {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  background-color: #0f172a;
+  color: white;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start; /* align sections at the top */
+  flex-wrap: wrap; /* allow wrapping on small screens */
+}
+
+.footer-section {
+  min-width: 200px;
+  margin: 1rem 0;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column; /* stack paragraphs vertically */
+  align-items: flex-start; /* align text to left of section */
+  gap: 0.5rem; /* spacing between lines */
+  font-size: 20px; /* adjust font size */
+  color: white;
+}
+
+.footer-bottom {
+  font-size: 17px;
+  text-align: center;
+  background-color: #0f172a;
+  color: white;
+  border-top: 1px solid #1e293b;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0; /* ✅ remove negative margins */
+}
