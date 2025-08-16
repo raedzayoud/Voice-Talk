@@ -4,6 +4,7 @@ import { Login } from './auth/login/login';
 import { Home } from './home/home';
 import { Fonctionnalites } from './fonctionnalites/fonctionnalites';
 import { Propos } from './propos/propos';
+import { Contact } from './contact/contact';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,5 +27,9 @@ export const routes: Routes = [
   {
     path: 'propos',
     component: Propos,
+  },
+  {
+    path: 'contact',
+    component: Contact,
   },
 ];
