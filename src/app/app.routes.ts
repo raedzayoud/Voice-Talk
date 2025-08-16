@@ -3,6 +3,7 @@ import { Singup } from './auth/singup/singup';
 import { Login } from './auth/login/login';
 import { Home } from './home/home';
 import { Fonctionnalites } from './fonctionnalites/fonctionnalites';
+import { Propos } from './propos/propos';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,5 +22,9 @@ export const routes: Routes = [
   {
     path: 'fonctionnalites',
     component: Fonctionnalites,
+  },
+  {
+    path: 'propos',
+    component: Propos,
   },
 ];
