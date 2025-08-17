@@ -8,7 +8,7 @@
 .container {
   max-width: 1275px;
   margin: 0 auto;
-  padding: 2rem;
+  padding-top: 1rem;
   margin-top: 50px;
 }
 
@@ -78,6 +78,9 @@ h2 {
   .feature-card h2 {
     font-size: 1.2rem;
   }
+  .feature-card {
+    margin: 0 50px;
+  }
 
   p {
     font-size: 1rem;
@@ -144,7 +147,7 @@ table {
 
 th,
 td {
-  padding: 15px;
+  padding: 13px;
   border-bottom: 1px solid #e5e7eb;
 }
 
