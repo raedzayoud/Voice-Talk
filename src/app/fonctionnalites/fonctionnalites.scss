@@ -171,3 +171,42 @@ td:first-child {
   color: brown;
   font-size: 20px;
 }
+
+/* Mobiles (≤ 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    padding: 0 10px;
+  }
+
+  .feature-card {
+    padding: 1rem;
+    margin: 0 10px;
+  }
+
+  .feature-card h2 {
+    font-size: 1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .section-table {
+    margin: 0 10px;
+    padding: 10px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+}
