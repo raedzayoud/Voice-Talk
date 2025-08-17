@@ -7,13 +7,22 @@
       <div class="logo">VoiceTask</div>
     </div>
 
-    <!-- <div class="burger-menu">☰</div> -->
-    <ul class="nav-links">
-      <li><a routerLink="/home">Accueil</a></li>
-      <li><a routerLink="/fonctionnalites">Fonctionnalités</a></li>
-      <li><a routerLink="/propos">À propos</a></li>
-      <li><a routerLink="/contact">Contact</a></li>
-      <li><a href="javascript:void(0)">Essayer</a></li>
+    <!-- Burger menu -->
+    <div class="burger-menu" (click)="toggleMenu()">☰</div>
+
+    <!-- Menu links with dynamic class -->
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a routerLink="/home" (click)="isMenuOpen = false">Accueil</a></li>
+      <li>
+        <a routerLink="/fonctionnalites" (click)="isMenuOpen = false"
+          >Fonctionnalités</a
+        >
+      </li>
+      <li><a routerLink="/propos" (click)="isMenuOpen = false">À propos</a></li>
+      <li><a routerLink="/contact" (click)="isMenuOpen = false">Contact</a></li>
+      <li class="ess">
+        <a routerLink="/essayer" (click)="isMenuOpen = false">Essayer</a>
+      </li>
     </ul>
   </nav>
 </header>

@@ -63,6 +63,10 @@ header {
   color: #3498db;
 }
 
+.burger-menu {
+  display: none;
+}
+
 /* Responsive design for mobile */
 @media screen and (max-width: 768px) {
   .nav-links {
@@ -101,4 +105,21 @@ header {
     display: block;
     cursor: pointer;
   }
+}
+
+.ess a {
+  display: inline-block;
+  padding: 3px 22px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.ess a:hover {
+  color: white;
 }

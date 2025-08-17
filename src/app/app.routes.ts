@@ -5,6 +5,7 @@ import { Home } from './home/home';
 import { Fonctionnalites } from './fonctionnalites/fonctionnalites';
 import { Propos } from './propos/propos';
 import { Contact } from './contact/contact';
+import { Essayer } from './essayer/essayer';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -31,5 +32,9 @@ export const routes: Routes = [
   {
     path: 'contact',
     component: Contact,
+  },
+  {
+    path: 'essayer',
+    component: Essayer,
   },
 ];

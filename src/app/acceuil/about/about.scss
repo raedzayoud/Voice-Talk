@@ -106,6 +106,88 @@
   }
 }
 
+/* Default styles (desktop first) are already defined */
+
+/* Large tablets & small desktops */
+@media (max-width: 1200px) {
+  .container-taches {
+    margin: 0 150px;
+  }
+  .container h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .container-taches {
+    margin: 0 80px;
+    padding: 1rem;
+  }
+  .container h1 {
+    font-size: 2rem;
+  }
+  .container .description {
+    font-size: 1rem;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .btn {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 0.65rem 1.2rem;
+  }
+}
+
+/* Large phones */
+@media (max-width: 768px) {
+  .about-container-1 {
+    height: auto;
+    padding: 1rem;
+  }
+  .container-taches {
+    margin: 0 40px;
+  }
+  .mic {
+    padding: 15px;
+    font-size: 24px;
+  }
+  .container h1 {
+    font-size: 1.8rem;
+  }
+  .btn {
+    width: 80%; /* full width for easy tapping */
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 576px) {
+  .container-taches {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 40px;
+    margin-right: 80px;
+  }
+  .container h1 {
+    font-size: 1.5rem;
+  }
+  .container .description {
+    font-size: 0.95rem;
+  }
+  .mic {
+    padding: 12px;
+    font-size: 22px;
+  }
+  .btn {
+    width: 90%; /* full width button */
+    padding: 0.55rem 0.4rem;
+  }
+}
+
 // About Container -2
 
 .about-container-2 {
@@ -226,8 +308,11 @@ li {
   }
 
   .stats-container {
-    height: 40vh; /* increase the height */
-    padding: 2rem 2rem; /* optional: increase padding for more space */
+    height: 40vh;
+    padding: 2rem 1rem;
+  }
+  .stat-label {
+    font-size: 20px;
   }
 }
 
@@ -308,32 +393,53 @@ li {
 }
 
 // Hero And Footer
-
-/* Hero */
 .hero {
-  background: linear-gradient(90deg, #2a7cff, #a020f0);
   text-align: center;
-  width: 100vw;
-  height: 15vh;
-  padding: 5rem 2rem;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding: 1rem 1rem; /* spacing top/bottom + sides */
+  background: linear-gradient(90deg, #3b82f6, #9333ea); /* your gradient */
 }
 
 .hero h1 {
   color: white;
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 
 .hero p {
   color: white;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   margin-bottom: 20px;
+  white-space: normal; /* allow wrapping */
+  word-wrap: break-word; /* break long words if needed */
+  max-width: 800px; /* keep line length comfortable */
+  margin: 0 auto; /* center block */
+  line-height: 1.6;
+}
+
+.hero .btn-white {
+  display: inline-block;
+  background: white;
+  color: #3498db;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero .btn-white:hover {
+  background: #f0f0f0;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  .hero p {
+    font-size: 1rem;
+    padding: 0 10px; /* avoid touching edges */
+  }
 }
 
 .btn-white {
@@ -386,6 +492,7 @@ li {
 .footer-section ul li a {
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .footer-section ul li a:hover {

@@ -8,10 +8,15 @@
     </p>
 
     <div class="buttons">
-      <a href="#" class="btn btn-unchecked" id="tryButton"
+      <a routerLink="/essayer" class="btn btn-unchecked" id="tryButton"
         >Essayer Gratuitement</a
       >
-      <a href="#" class="btn btn-unchecked" id="discoverButton">Découvrir →</a>
+      <a
+        routerLink="/fonctionnalites"
+        class="btn btn-unchecked"
+        id="discoverButton"
+        >Découvrir →</a
+      >
     </div>
 
     <div class="divider"></div>
@@ -121,7 +126,8 @@
   <section class="hero">
     <h1>Prêt à révolutionner votre productivité ?</h1>
     <p>Rejoignez des milliers d'utilisateurs qui ont déjà adopté VoiceTask</p>
-    <a href="#" class="btn-white">▶ Commencer Gratuitement</a>
+    <br />
+    <a routerLink="/essayer" class="btn-white">▶ Commencer Gratuitement</a>
   </section>
   <footer class="footer">
     <div class="footer-section footer-logo">
@@ -135,10 +141,10 @@
     <div class="footer-section">
       <h4>Navigation</h4>
       <ul>
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">Fonctionnalités</a></li>
-        <li><a href="#">À propos</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a routerLink="/home">Accueil</a></li>
+        <li><a routerLink="/fonctionnalites">Fonctionnalités</a></li>
+        <li><a routerLink="/propos">À propos</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
       </ul>
     </div>
 
