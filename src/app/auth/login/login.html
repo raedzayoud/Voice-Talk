@@ -1,14 +1,18 @@
 <div class="login-wrapper">
   <div class="login-container">
+    <div class="notification" *ngIf="notifcation">
+      {{ notifcation }}
+    </div>
     <h2>Login</h2>
-    <form>
+    <form (ngSubmit)="Login()">
       <div class="form-group">
-        <label for="username">Username</label>
+        <label for="email">Email</label>
         <input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="Enter your username"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          [(ngModel)]="email"
           required
         />
       </div>
@@ -20,10 +24,14 @@
           id="password"
           name="password"
           placeholder="Enter your password"
+          [(ngModel)]="password"
           required
         />
       </div>
-      <button type="submit" (click)="Login()">Sign In</button>
+      <button type="submit" [disabled]="loading">
+        <span *ngIf="!loading">Sign In</span>
+        <span *ngIf="loading" class="spinner"></span>
+      </button>
 
       <div class="register-link">
         <a href="javascript:void(0)" (click)="navigateToRegister()"

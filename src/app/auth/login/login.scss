@@ -8,6 +8,32 @@
   align-items: center;
 }
 
+.notification {
+  background-color: #f8d7da;
+  color: #842029;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #f5c2c7;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Login box styling */
 .login-container {
   background: white;
@@ -33,7 +59,7 @@ label {
   font-weight: 600;
 }
 
-input[type="text"],
+input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 10px 12px;
