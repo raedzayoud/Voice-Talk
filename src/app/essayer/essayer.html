@@ -1,10 +1,10 @@
-<app-menu></app-menu>
+<!-- <app-menu></app-menu>
 <div class="container-essayer">
-  <!-- Titre -->
+
   <h1>Démo VoiceTask</h1>
   <p>Testez notre assistant vocal intelligent</p>
 
-  <!-- Carte -->
+
   <div class="card">
     <h3>Interface Vocale</h3>
     <small
@@ -12,7 +12,27 @@
     >
   </div>
 
-  <!-- Bouton micro -->
+
   <div class="mic-button">🎤</div>
 </div>
+<app-footer></app-footer> -->
+
+<app-menu></app-menu>
+
+<div class="container-essayer">
+  <!-- Titre -->
+  <h1>Démo VoiceTask</h1>
+  <p>Choisissez une action à tester</p>
+
+  <!-- Boutons -->
+  <div class="buttons-container">
+    <button class="action-btn" routerLink="/projects">
+      ➕ Créer une Tâche
+    </button>
+    <button class="action-btn">📅 Créer une Réunion</button>
+  </div>
+</div>
+
+<br />
+
 <app-footer></app-footer>

@@ -6,6 +6,7 @@ import { Fonctionnalites } from './fonctionnalites/fonctionnalites';
 import { Propos } from './propos/propos';
 import { Contact } from './contact/contact';
 import { Essayer } from './essayer/essayer';
+import { Projects } from './projects/projects';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -36,5 +37,9 @@ export const routes: Routes = [
   {
     path: 'essayer',
     component: Essayer,
+  },
+  {
+    path: 'projects',
+    component: Projects,
   },
 ];
