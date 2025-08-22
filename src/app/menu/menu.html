@@ -23,7 +23,7 @@
       <li><a routerLink="/propos" (click)="isMenuOpen = false">À propos</a></li>
       <li><a routerLink="/contact" (click)="isMenuOpen = false">Contact</a></li>
       <li class="ess">
-        <a routerLink="/essayer" (click)="isMenuOpen = false">Essayer</a>
+        <a (click)="goToEssayer(); isMenuOpen = false">Essayer</a>
       </li>
     </ul>
   </nav>

@@ -9,7 +9,7 @@ import { Essayer } from './essayer/essayer';
 import { Projects } from './projects/projects';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'singup',
     component: Singup,

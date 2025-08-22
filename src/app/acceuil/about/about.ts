@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -7,4 +7,13 @@ import { RouterLink } from '@angular/router';
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })
-export class About {}
+export class About {
+  constructor(private router: Router) {}
+  goToEssayer() {
+    if (localStorage.getItem('token') == null) {
+      this.router.navigate(['login']);
+      return;
+    }
+    this.router.navigate(['essayer']);
+  }
+}

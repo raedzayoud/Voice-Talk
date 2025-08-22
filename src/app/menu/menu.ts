@@ -1,14 +1,26 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-menu',
   imports: [RouterLink],
   templateUrl: './menu.html',
-  styleUrl: './menu.scss',
+  styleUrls: ['./menu.scss'],
 })
 export class Menu {
   isMenuOpen: boolean = false;
+
+  constructor(private router: Router) {}
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  goToEssayer() {
+    if (localStorage.getItem('token') == null) {
+      this.router.navigate(['login']);
+      return;
+    }
+    this.router.navigate(['essayer']);
   }
 }

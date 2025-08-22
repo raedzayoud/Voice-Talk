@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Menu } from '../menu/menu';
 import { Footer } from '../component/footer/footer';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-propos',
@@ -9,4 +9,13 @@ import { RouterLink } from '@angular/router';
   templateUrl: './propos.html',
   styleUrl: './propos.scss',
 })
-export class Propos {}
+export class Propos {
+  constructor(private router: Router) {}
+  goToEssayer() {
+    if (localStorage.getItem('token') == null) {
+      this.router.navigate(['login']);
+      return;
+    }
+    this.router.navigate(['essayer']);
+  }
+}

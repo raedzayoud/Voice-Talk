@@ -4,6 +4,7 @@ import { AuthService } from '../../services/api/auth/authservice';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; // pour ngModel
 import { NgIf } from '@angular/common'; // <-- import nécessaire
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,11 @@ export class Login {
   password: string = '';
   notifcation: string = '';
   loading: boolean = false;
-  constructor(private router: Router, private authservice: AuthService) {}
+  constructor(
+    private router: Router,
+    private authservice: AuthService,
+    private snackBar: MatSnackBar
+  ) {}
   navigateToRegister() {
     this.router.navigate(['singup']);
   }
@@ -25,19 +30,33 @@ export class Login {
   Login() {
     this.loading = true;
     this.authservice.login(this.email, this.password).subscribe({
-      next: (response) => {
+      next: (response: any) => {
         this.loading = false;
+
         if (response.message === 'email or password is not correct ') {
-          this.showNotification(response.message);
+          this.snackBar.open(response.message, 'Close', {
+            duration: 3000,
+            verticalPosition: 'top',
+            panelClass: ['error-snackbar'], // custom style
+          });
         } else {
-          // login réussi
-          console.log('Login success:', response);
+          localStorage.setItem('token', response.token);
+
+          this.snackBar.open('✅ ' + response.message, 'OK', {
+            duration: 3000,
+            panelClass: ['success-snackbar'],
+          });
+
           this.router.navigate(['home']);
         }
       },
       error: (error) => {
         this.loading = false;
-        console.error('Login failed:', error);
+        this.snackBar.open('❌ Login failed. Try again.', 'Close', {
+          duration: 3000,
+          verticalPosition: 'top',
+          panelClass: ['error-snackbar'],
+        });
       },
     });
   }

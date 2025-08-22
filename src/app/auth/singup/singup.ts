@@ -39,7 +39,7 @@ export class Singup {
         next: (response) => {
           this.loading = false;
 
-          // ✅ Affiche le message
+          //  Affiche le message
           this.showNotification(response.status);
           console.log('Signup response:', response);
           this.name = '';
@@ -48,7 +48,7 @@ export class Singup {
           this.password = '';
           this.confirmPassword = '';
           setTimeout(() => {
-            this.notifcation = ''; // cache notif
+            this.notifcation = '';
             this.router.navigate(['login']);
           }, 5000);
         },
