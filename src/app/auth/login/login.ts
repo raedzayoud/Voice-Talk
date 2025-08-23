@@ -41,7 +41,7 @@ export class Login {
           });
         } else {
           localStorage.setItem('token', response.token);
-          alert(localStorage.getItem('token'));
+          //   alert(localStorage.getItem('token'));
           this.snackBar.open('✅ ' + response.message, 'OK', {
             duration: 3000,
             panelClass: ['success-snackbar'],

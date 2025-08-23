@@ -1,13 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ProjetsService } from '../services/api/projects/projetsservice';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, NgForm } from '@angular/forms'; // pour ngModel
 import { NgIf } from '@angular/common'; // <-- import nécessaire
 import { NgFor } from '@angular/common'; // <-- import nécessaire
+import { Footer } from '../component/footer/footer';
+import { Menu } from '../menu/menu';
 
 @Component({
-  imports: [NgFor, NgIf, FormsModule, HttpClientModule],
+  imports: [
+    NgFor,
+    NgIf,
+    FormsModule,
+    HttpClientModule,
+    RouterLink,
+    Menu,
+    Footer,
+  ],
   selector: 'app-projects',
   templateUrl: './projects.html',
   styleUrls: ['./projects.scss'], // fixed typo: styleUrl -> styleUrls

@@ -1,3 +1,7 @@
+<app-menu></app-menu>
+<br />
+<br />
+<br />
 <div class="container-essayer">
   <div class="demo">
     <h1>Démo VoiceTask</h1>
@@ -25,30 +29,35 @@
   </div>
   <!-- --------------------------------------- -->
   <!-- Titre -->
-  <h1>Gestion des Projets</h1>
-  <br />
-  <p>Chaque projet contient ses tâches</p>
+  <div class="container-essayer">
+    <h1>Gestion des Projets</h1>
+    <p>Chaque projet contient ses tâches</p>
 
-  <!-- Loading -->
-  <div *ngIf="loading">Chargement des projets...</div>
+    <!-- Loading -->
+    <div *ngIf="loading">Chargement des projets...</div>
 
-  <!-- No projects -->
-  <div *ngIf="!loading && projects.length === 0" class="card-project">
-    Il n'y a aucun projet. Ajoutez votre projet.
-  </div>
-
-  <!-- Projects list -->
-  <ng-container *ngIf="!loading && projects.length > 0">
-    <div *ngFor="let projet of projects" class="card project">
-      <h3>📌 Projet : {{ projet.name }}</h3>
-      <p>{{ projet.description }}</p>
-
-      <!-- Example static tasks -->
-      <ul class="task-list">
-        <li>✅ Tâche 1</li>
-        <li>🔄 Tâche 2</li>
-        <li>⏳ Tâche 3</li>
-      </ul>
+    <!-- No projects -->
+    <div *ngIf="!loading && projects.length === 0" class="card project">
+      Il n'y a aucun projet. Ajoutez votre projet.
     </div>
-  </ng-container>
+
+    <!-- Projects list -->
+    <ng-container *ngIf="!loading && projects.length > 0">
+      <div *ngFor="let projet of projects" class="card project">
+        <h3>📌 Projet : {{ projet.name }}</h3>
+        <p>{{ projet.description }}</p>
+
+        <ul class="task-list">
+          <li>✅ Tâche 1</li>
+          <li>🔄 Tâche 2</li>
+          <li>⏳ Tâche 3</li>
+        </ul>
+      </div>
+    </ng-container>
+
+    <!-- Unique button here -->
+    <button routerLink="/addproject" class="add">➕ Ajouter un projet</button>
+  </div>
 </div>
+
+<app-footer></app-footer>

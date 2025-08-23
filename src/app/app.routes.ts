@@ -7,6 +7,8 @@ import { Propos } from './propos/propos';
 import { Contact } from './contact/contact';
 import { Essayer } from './essayer/essayer';
 import { Projects } from './projects/projects';
+import { Addproject } from './projects/addproject/addproject';
+import { Reunion } from './reunion/reunion';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -41,5 +43,13 @@ export const routes: Routes = [
   {
     path: 'projects',
     component: Projects,
+  },
+  {
+    path: 'addproject',
+    component: Addproject,
+  },
+  {
+    path: 'reunion',
+    component: Reunion,
   },
 ];
