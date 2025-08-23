@@ -1,26 +1,153 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =================== */
+/* Section Démo (Micro) */
+/* =================== */
+.demo {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f5ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+}
+
+.demo h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+}
+
+.demo p {
+  margin: 5px 0 15px 0; /* réduit espace */
+  color: #444;
+}
+
+.card {
+  background: #fff;
+  width: 600px;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card small {
+  color: #666;
+  font-size: 14px;
+}
+
+.mic-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.voice-button {
+  align-self: flex-end;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: rgb(58, 134, 235); /* stylish gradient */
+  color: white;
+  border: none;
+  border-radius: 25px; /* pill-shaped button */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.voice-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.voice-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mic-button {
+  width: 90px;
+  height: 90px;
+  background-color: #1976d2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.mic-button:hover {
+  background-color: #0d47a1;
+}
+
+.mic-button i {
+  color: white;
+  font-size: 28px;
+}
+
+.exemple {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.card-2 {
+  margin-top: 15px;
+  width: 100%;
+  background-color: white;
+  border-radius: 30px;
+  padding: 10px;
+  margin-bottom: 20px; /* espace contrôlé avant "Gestion des projets" */
+}
+
+/* ========================= */
+/* Section Gestion des Projets */
+/* ========================= */
 .container-essayer {
   font-family: Arial, sans-serif;
-  background-color: #f0f6ff; /* bleu clair de fond */
+  background-color: #f0f6ff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 600px;
-  margin: 0;
   padding: 20px;
 }
 
-/* Titre */
-h1 {
+.container-essayer > h1 {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 5px; /* petit espace */
   color: #000;
 }
 
-/* Sous-titre */
-p {
-  margin: 0 0 30px;
+.container-essayer > p {
+  margin: 0 0 20px; /* réduit l’espace */
   font-size: 1rem;
   color: #444;
 }
