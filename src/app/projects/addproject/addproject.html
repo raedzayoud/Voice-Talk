@@ -3,12 +3,14 @@
 <div class="container-add">
   <div class="form-container">
     <h2>Ajouter un Projet</h2>
-    <form>
+    <form (ngSubmit)="addProjet()">
       <div class="form-group">
         <label for="name">Nom</label>
         <input
           type="text"
           id="name"
+          [(ngModel)]="name"
+          name="name"
           placeholder="Entrer le nom du projet"
           required
         />
@@ -17,13 +19,22 @@
         <label for="description">Description</label>
         <textarea
           id="description"
+          [(ngModel)]="description"
+          name="description"
           placeholder="Entrer la description du projet"
           required
         ></textarea>
       </div>
 
-      <button type="submit">Enregistrer</button>
+      <button type="submit" [disabled]="loading">
+        <span *ngIf="!loading">Enregistrer</span>
+        <span *ngIf="loading" class="spinner"></span>
+      </button>
     </form>
+
+    <p *ngIf="isSuccess" class="success-message">
+      ✅ Projet ajouté avec succès !
+    </p>
   </div>
 </div>
 

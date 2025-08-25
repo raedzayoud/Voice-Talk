@@ -24,4 +24,24 @@ export class ProjetsService {
     // GET request with headers
     return this.http.get(projetUrl, { headers });
   }
+  addProject(name: string, description: string) {
+    const projetUrl = this.baseUrl + 'storeprojet';
+
+    // Get token from localStorage
+    const token = localStorage.getItem('token');
+
+    // Set headers
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    });
+
+    const data = {
+      name: name,
+      description: description,
+    };
+
+    // Pass data as body, headers as options
+    return this.http.post(projetUrl, data, { headers });
+  }
 }
