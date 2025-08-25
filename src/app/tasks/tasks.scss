@@ -1,0 +1,143 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =================== */
+/* Section Démo (Micro) */
+/* =================== */
+
+.card-p-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* aligns items to top if heights differ */
+  gap: 10px; /* adds space between description and button */
+}
+
+.card.project p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  padding: 8px 12px;
+  background: #f9f9f9;
+  border-left: 4px solid #3498db;
+  border-radius: 6px;
+  margin: 0; /* remove default margins since we're using flexbox */
+  flex: 1; /* allows paragraph to take available space */
+}
+
+.card.project button {
+  margin-top: 5px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  flex-shrink: 0; /* prevents button from shrinking */
+  align-self: flex-start; /* aligns button to top of container */
+}
+
+.card.project button:hover {
+  background: #c0392b;
+}
+
+.card-project {
+  background: #fff;
+  width: 600px;
+  max-width: 90%;
+  font-weight: bold;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+/* ========================= */
+/* Section Gestion des Projets */
+/* ========================= */
+.container-essayer {
+  font-family: Arial, sans-serif;
+  background-color: #f0f6ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8vh;
+  margin-top: 80px;
+}
+
+.container-all {
+  background-color: #f0f6ff;
+}
+
+.container-essayer > h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px; /* petit espace */
+  color: #000;
+}
+
+.container-essayer > p {
+  margin: 0 0 20px; /* réduit l’espace */
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Carte projet */
+.card.project {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 600px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Titre projet */
+.card.project h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #2d7dff;
+}
+
+.task-list li {
+  font-size: 1rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.task-list li:last-child {
+  border-bottom: none;
+}
+
+.add {
+  align-self: flex-end;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: rgb(58, 134, 235); /* stylish gradient */
+  color: white;
+  border: none;
+  border-radius: 25px; /* pill-shaped button */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.add:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.add:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
