@@ -24,6 +24,7 @@ export class ProjetsService {
     // GET request with headers
     return this.http.get(projetUrl, { headers });
   }
+
   addProject(name: string, description: string) {
     const projetUrl = this.baseUrl + 'storeprojet';
 
@@ -43,5 +44,21 @@ export class ProjetsService {
 
     // Pass data as body, headers as options
     return this.http.post(projetUrl, data, { headers });
+  }
+
+  deleteProject(id: number) {
+    const projetUrl = `${this.baseUrl}deleteprojet/${id}`;
+
+    // Get token from localStorage
+    const token = localStorage.getItem('token');
+
+    // Set headers
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    });
+
+    // Perform DELETE request
+    return this.http.delete(projetUrl, { headers });
   }
 }

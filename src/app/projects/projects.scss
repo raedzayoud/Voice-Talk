@@ -31,6 +31,65 @@
   color: #444;
 }
 
+.card.project {
+  flex-direction: column;
+  display: flex;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  margin-bottom: 15px;
+}
+
+.card-p-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* aligns items to top if heights differ */
+  gap: 10px; /* adds space between description and button */
+}
+
+.card.project p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  padding: 8px 12px;
+  background: #f9f9f9;
+  border-left: 4px solid #3498db;
+  border-radius: 6px;
+  margin: 0; /* remove default margins since we're using flexbox */
+  flex: 1; /* allows paragraph to take available space */
+}
+
+.card.project .Details {
+  background-color: #3498db;
+}
+
+.card.project .Details:hover {
+  background-color: #055386;
+}
+
+.card.project button {
+  margin-top: 5px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  flex-shrink: 0; /* prevents button from shrinking */
+  align-self: flex-start; /* aligns button to top of container */
+}
+
+.card.project h3 {
+  margin-bottom: 10px; /* adds space between title and content */
+}
+
+.card.project button:hover {
+  background: #c0392b;
+}
+
 .card {
   background: #fff;
   width: 600px;
