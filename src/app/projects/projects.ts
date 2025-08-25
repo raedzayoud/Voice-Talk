@@ -45,23 +45,16 @@ export class Projects implements OnInit {
       next: (response: any) => {
         this.loading = false;
         this.isSuccess = true;
-        this.showSnackbarMessage('Project deleted successfully!');
+
+        // this.showSnackbarMessage('Project deleted successfully!');
         this.getProjects();
       },
       error: (error) => {
         this.loading = false;
         this.isSuccess = false;
-        this.showSnackbarMessage('Failed to delete project!');
+        // this.showSnackbarMessage('Failed to delete project!');
         console.error(error);
       },
     });
-  }
-
-  showSnackbarMessage(message: string) {
-    this.snackbarMessage = message;
-    this.showSnackbar = true;
-    setTimeout(() => {
-      this.showSnackbar = false;
-    }, 3000); // snackbar visible 3 secondes
   }
 }

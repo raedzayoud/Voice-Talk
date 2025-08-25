@@ -1,10 +1,19 @@
 .signup-all {
-  min-height: 44vw;
+  min-height: 46vw;
 
   /* Center signup-container inside this */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.signup-image {
+  flex: 1; /* take 50% */
+  background: url("../../assets/images/login.jpg") no-repeat center center /
+    cover;
+}
+.signup-form {
+  flex: 1;
 }
 
 .notification {
@@ -34,16 +43,18 @@
 }
 
 .signup-container {
+  display: flex;
+  overflow: hidden;
   background: #fff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  width: 350px;
+  width: 850px;
   margin: 0; /* reset margin because flex centering */
 }
 
 /* Rest of your styles */
-h2 {
+h1 {
   text-align: center;
   margin-bottom: 24px;
   color: #333;
@@ -60,7 +71,7 @@ label {
 }
 
 input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;

@@ -34,13 +34,27 @@
   }
 }
 
+.login-image {
+  flex: 1; /* take 50% */
+  background: url("../../assets/images/login.jpg") no-repeat center center /
+    cover;
+}
+
+/* Form section */
+.login-form {
+  flex: 1; /* take 50% */
+  padding: 30px 40px;
+}
+
 /* Login box styling */
 .login-container {
+  display: flex;
+  overflow: hidden;
   background: white;
   padding: 30px 40px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  width: 320px;
+  width: 600px;
 }
 
 .login-container h2 {
