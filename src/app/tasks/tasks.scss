@@ -1,65 +1,3 @@
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* =================== */
-/* Section Démo (Micro) */
-/* =================== */
-
-.card-p-button {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* aligns items to top if heights differ */
-  gap: 10px; /* adds space between description and button */
-}
-
-.card.project p {
-  font-size: 15px;
-  color: #444;
-  line-height: 1.6;
-  padding: 8px 12px;
-  background: #f9f9f9;
-  border-left: 4px solid #3498db;
-  border-radius: 6px;
-  margin: 0; /* remove default margins since we're using flexbox */
-  flex: 1; /* allows paragraph to take available space */
-}
-
-.card.project button {
-  margin-top: 5px;
-  background: #e74c3c;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.3s ease;
-  flex-shrink: 0; /* prevents button from shrinking */
-  align-self: flex-start; /* aligns button to top of container */
-}
-
-.card.project button:hover {
-  background: #c0392b;
-}
-
-.card-project {
-  background: #fff;
-  width: 600px;
-  max-width: 90%;
-  font-weight: bold;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-}
-
-/* ========================= */
-/* Section Gestion des Projets */
-/* ========================= */
 .container-essayer {
   font-family: Arial, sans-serif;
   background-color: #f0f6ff;
@@ -67,12 +5,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 8vh;
+  padding: 40px;
   margin-top: 80px;
-}
-
-.container-all {
-  background-color: #f0f6ff;
 }
 
 .container-essayer > h1 {
@@ -108,6 +42,13 @@
   color: #2d7dff;
 }
 
+/* Liste des tâches */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .task-list li {
   font-size: 1rem;
   padding: 6px 0;
@@ -140,4 +81,49 @@
 .add:active {
   transform: translateY(1px);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.container-button {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bouton Delete */
+.delete {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #ff4d4d, #e60000);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.delete:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ff1a1a, #cc0000);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.delete:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card-p-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-p-button p {
+  background-color: #f0f6ff;
+  margin: 0; /* supprime margin par défaut */
+  padding: 15px 9px; /* padding uniforme */
+  border-radius: 8px; /* coins arrondis */
+  flex: 0.95; /* prend tout l'espace restant */
+  word-break: break-word; /* texte qui déborde à la ligne si nécessaire */
 }

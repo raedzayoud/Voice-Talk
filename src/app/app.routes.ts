@@ -10,6 +10,7 @@ import { Projects } from './projects/projects';
 import { Addproject } from './projects/addproject/addproject';
 import { Reunion } from './reunion/reunion';
 import { Tasks } from './tasks/tasks';
+import { Addtask } from './tasks/addtask/addtask';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -56,5 +57,9 @@ export const routes: Routes = [
   {
     path: 'tasks/:id',
     component: Tasks,
+  },
+  {
+    path: 'addtask/:id',
+    component: Addtask,
   },
 ];

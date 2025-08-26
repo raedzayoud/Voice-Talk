@@ -1,39 +1,30 @@
 <app-menu></app-menu>
+<div class="container-essayer">
+  <h1>Gestion des Taches</h1>
+  <p>Chaque projet contient ses tâches</p>
 
-<div class="container-all">
-  <div class="container-essayer">
-    <h1>Gestion des Taches</h1>
-    <br />
-    <!-- <p>Chaque projet contient ses tâches</p>
-
-  <div *ngIf="loading">Chargement des projets...</div>
-
-  <div *ngIf="!loading && projects.length === 0" class="card project">
-    Il n'y a aucun projet. Ajoutez votre projet.
-  </div> -->
+  <!-- Loading -->
+  <div *ngIf="loading">Chargement des Taches...</div>
+  <div class="container-button">
+    <!-- No projects -->
+    <div *ngIf="!loading && tasks.length === 0" class="card project">
+      Il n'y a aucun Taches. Ajoutez votre Taches.
+    </div>
 
     <!-- Projects list -->
-    <!-- <ng-container *ngIf="!loading && projects.length > 0">
-    <div *ngFor="let projet of projects" class="card project">
-      <h3>📌 Projet : {{ projet.name }}</h3>
-      <div class="card-p-button">
-        <p><strong>Description:</strong> {{ projet.description }}</p>
-        <button (click)="deleteProject(projet.id)">Delete</button>
-        <button routerLink="/tasks" class="Details">Details</button>
-      </div>
-    </div>
-  </ng-container> -->
-
-    <ng-container>
-      <div class="card project">
-        <h3>📌 Tasks</h3>
+    <ng-container *ngIf="!loading && tasks.length > 0">
+      <div *ngFor="let task of tasks" class="card project">
+        <h3>📌 task : {{ task.titre }}</h3>
         <div class="card-p-button">
-          <p>Tache 1</p>
-          <button>Delete</button>
+          <p><strong>Description:</strong> {{ task.description }}</p>
+          <button class="delete" (click)="deleteTask(task.id)">Delete</button>
         </div>
       </div>
     </ng-container>
-  </div>
 
-  <app-footer></app-footer>
+    <!-- Unique button here -->
+    <button class="add" (click)="goToAddTask()">➕ Ajouter une Tâche</button>
+  </div>
 </div>
+
+<app-footer></app-footer>
