@@ -48,7 +48,9 @@
         <div class="card-p-button">
           <p><strong>Description:</strong> {{ projet.description }}</p>
           <button (click)="deleteProject(projet.id)">Delete</button>
-          <button routerLink="/tasks" class="Details">Details</button>
+          <button [routerLink]="['/tasks', projet.id]" class="Details">
+            Details
+          </button>
         </div>
       </div>
     </ng-container>

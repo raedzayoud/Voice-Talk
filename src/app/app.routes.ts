@@ -54,7 +54,7 @@ export const routes: Routes = [
     component: Reunion,
   },
   {
-    path: 'tasks',
+    path: 'tasks/:id',
     component: Tasks,
   },
 ];

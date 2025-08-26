@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ProjetsService } from '../services/api/projects/projetsservice';
 import { FormsModule, NgForm } from '@angular/forms';
 import { NgIf, NgFor } from '@angular/common';
@@ -13,4 +13,12 @@ import { Menu } from '../menu/menu';
   templateUrl: './tasks.html',
   styleUrl: './tasks.scss',
 })
-export class Tasks {}
+export class Tasks implements OnInit {
+  projectId!: number;
+  constructor(private route: ActivatedRoute) {}
+  ngOnInit(): void {
+    this.projectId = Number(this.route.snapshot.paramMap.get('id'));
+    console.log('Project ID:', this.projectId);
+    // Now you can fetch tasks by projectId
+  }
+}
