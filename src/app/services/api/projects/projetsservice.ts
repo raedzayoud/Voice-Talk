@@ -61,4 +61,24 @@ export class ProjetsService {
     // Perform DELETE request
     return this.http.delete(projetUrl, { headers });
   }
+
+  askGemini(prompt: string) {
+    const sendUrl = this.baseUrl + 'ask-gemini-2';
+
+    // Get token from localStorage
+    const token = localStorage.getItem('token');
+
+    // Set headers
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    });
+
+    const data = {
+      prompt: prompt,
+    };
+
+    // Pass data as body, headers as options
+    return this.http.post(sendUrl, data, { headers });
+  }
 }

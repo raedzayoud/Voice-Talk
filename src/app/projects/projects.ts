@@ -5,6 +5,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { NgIf, NgFor } from '@angular/common';
 import { Footer } from '../component/footer/footer';
 import { Menu } from '../menu/menu';
+import { GeminiService } from '../services/api/gemini/gemini';
 
 @Component({
   imports: [NgFor, NgIf, FormsModule, RouterLink, Menu, Footer],
@@ -17,9 +18,18 @@ export class Projects implements OnInit {
   projects: any[] = [];
   isSuccess: boolean = false;
   snackbarMessage: string = '';
+  private mediaRecorder!: MediaRecorder;
+  private audioChunks: BlobPart[] = [];
+  transcription: string = '';
   showSnackbar: boolean = false;
 
-  constructor(private router: Router, private projectService: ProjetsService) {}
+  loadingGemni: boolean = false;
+
+  constructor(
+    private router: Router,
+    private projectService: ProjetsService,
+    private geminiService: GeminiService
+  ) {}
 
   ngOnInit() {
     this.getProjects();
@@ -55,6 +65,54 @@ export class Projects implements OnInit {
         // this.showSnackbarMessage('Failed to delete project!');
         console.error(error);
       },
+    });
+  }
+  async startRecording() {
+    this.audioChunks = [];
+    this.transcription = '';
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    this.mediaRecorder = new MediaRecorder(stream);
+
+    this.mediaRecorder.ondataavailable = (event) => {
+      this.audioChunks.push(event.data);
+    };
+
+    this.mediaRecorder.start();
+  }
+
+  async stopRecording() {
+    if (!this.mediaRecorder || this.mediaRecorder.state === 'inactive') {
+      console.warn('MediaRecorder not active');
+      return;
+    }
+
+    this.loadingGemni = true;
+
+    return new Promise<void>((resolve, reject) => {
+      this.mediaRecorder.onstop = () => {
+        const audioBlob = new Blob(this.audioChunks, { type: 'audio/webm' });
+        const reader = new FileReader();
+
+        reader.onloadend = async () => {
+          const base64Audio = (reader.result as string).split(',')[1];
+          try {
+            this.transcription = await this.geminiService.transcribeAudio(
+              base64Audio,
+              'audio/webm'
+            );
+            resolve();
+          } catch (error) {
+            console.error('Erreur Gemini:', error);
+            reject(error);
+          } finally {
+            this.loadingGemni = false;
+          }
+        };
+
+        reader.readAsDataURL(audioBlob);
+      };
+
+      this.mediaRecorder.stop();
     });
   }
 }

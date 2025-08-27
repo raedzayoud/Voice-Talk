@@ -9,24 +9,34 @@
 
     <div class="card">
       <h3><i class="fa fa-microphone"></i> Interface Vocale</h3>
-      <small
-        >Dites "Ajoute tâche : [description]" ou "Planifie réunion
-        [titre]"</small
-      >
+      <small> Dites "Ajoute tâche : [description]" </small>
 
       <div class="mic-container">
-        <div class="mic-button">
+        <div class="mic-button" (click)="startRecording()">
           <i class="fa fa-microphone"></i>
         </div>
-        <button class="voice-button">Send To Gemini</button>
+        <button class="voice-button" (click)="stopRecording()">
+          Gemini Text
+        </button>
+        <span *ngIf="loadingGemni" class="loading-text"
+          >Transcription en cours...</span
+        >
+      </div>
+
+      <!-- 🎤 Résultat transcription -->
+      <div class="transcription-box" *ngIf="transcription">
+        <h4>📝 Texte transcrit :</h4>
+        <p>{{ transcription }}</p>
       </div>
     </div>
+
     <div class="card-2">
       <div class="exemple">
-        💡 Exemples : "Ajoute tâche" :Add Task 1 to Project Odoo
+        💡 Exemples : "Ajoute tâche" : Add Task 1 to Project Odoo
       </div>
     </div>
   </div>
+
   <!-- --------------------------------------- -->
   <!-- Titre -->
   <div class="container-essayer">
