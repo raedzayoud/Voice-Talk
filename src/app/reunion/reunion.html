@@ -2,7 +2,7 @@
 <br />
 <br />
 <br />
-<div class="conatiner-all">
+<div class="container-all">
   <div class="container-essayer">
     <div class="demo">
       <h1>Démo VoiceTask</h1>
@@ -19,8 +19,8 @@
           <button class="voice-button">Gemini Text</button>
         </div>
         <div class="transcription-box-button" *ngIf="transcription">
-          <button (click)="createTask()" [disabled]="loadingGemni">
-            <span *ngIf="!loadingGemni">Create Task</span>
+          <button (click)="createMeeting()" [disabled]="loadingGemni">
+            <span *ngIf="!loadingGemni">Create Meeting</span>
             <span *ngIf="loadingGemni" class="spinner"></span>
           </button>
         </div>
@@ -35,43 +35,54 @@
     <!-- *************************************************** -->
     <h1>📅 Liste des Réunions</h1>
     <div class="meetings-container">
-      <!-- Réunion 1 -->
-      <div class="meeting-card">
-        <div class="meeting-title">Réunion de Projet</div>
-        <div class="meeting-date">📆 25 Août 2025 - 10h00</div>
+      <div class="meeting-card" *ngFor="let meet of meetings; let i = index">
+        <div class="meeting-title">
+          {{ meet.title || "Réunion " + (i + 1) }}
+        </div>
+        <div class="meeting-date">
+          📆 {{ meet.start_time || "Date non définie" }}
+        </div>
         <div class="meeting-description">
-          Discussion sur l’avancement du projet mobile et répartition des
-          nouvelles tâches.
+          {{ meet.description || "Aucune description fournie" }}
+        </div>
+        <div class="meeting-code">
+          Code Meeting : {{ meet.room || "Aucun code fourni" }}
         </div>
         <a
-          href="https://meet.jit.si/+meering.code"
+          *ngIf="meet.room"
+          [href]="'https://meet.jit.si/' + meet.room"
           class="btn-join"
           target="_blank"
-          >Rejoindre</a
         >
+          Rejoindre
+        </a>
       </div>
 
-      <!-- Réunion 2 -->
-      <div class="meeting-card">
-        <div class="meeting-title">Réunion Équipe Marketing</div>
-        <div class="meeting-date">📆 28 Août 2025 - 15h00</div>
-        <div class="meeting-description">
-          Présentation de la nouvelle stratégie de communication digitale.
-        </div>
-        <a href="#" class="btn-join">Rejoindre</a>
+      <!-- Fallback if no meetings -->
+      <div *ngIf="!meetings.length" class="no-meetings">
+        🚫 Aucune réunion trouvée.
       </div>
+    </div>
 
-      <!-- Réunion 3 -->
-      <div class="meeting-card">
-        <div class="meeting-title">Réunion RH</div>
-        <div class="meeting-date">📆 30 Août 2025 - 09h30</div>
-        <div class="meeting-description">
-          Mise en place d’un plan de formation pour le personnel technique.
-        </div>
-        <a href="#" class="btn-join">Rejoindre</a>
+    <!-- ✨ NEW: Join by code -->
+    <div class="join">
+      <div class="join-by-code">
+        <h2>🔑 Rejoindre avec un code</h2>
+        <input
+          type="text"
+          [(ngModel)]="joinCode"
+          placeholder="Entrez le code de réunion"
+        />
+        <button
+          (click)="joinMeetingByCode()"
+          [disabled]="!joinCode || joinCode.trim() === ''"
+        >
+          Rejoindre
+        </button>
       </div>
     </div>
   </div>
-</div>
+  <br />
 
-<app-footer></app-footer>
+  <app-footer></app-footer>
+</div>

@@ -196,3 +196,59 @@ h1 {
 .btn-join:hover {
   background: #357abd;
 }
+
+.join {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-by-code {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border: 2px dashed #007bff;
+  border-radius: 12px;
+  text-align: center;
+  width: 50%;
+}
+
+.join-by-code h2 {
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.join-by-code input {
+  padding: 10px;
+  width: 60%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-right: 10px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.join-by-code input:focus {
+  border-color: #007bff;
+}
+
+.join-by-code button {
+  padding: 10px 20px;
+  background: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.join-by-code button:disabled {
+  background: #b0c4de;
+  cursor: not-allowed;
+}
+
+.join-by-code button:hover:not(:disabled) {
+  background: #0056b3;
+}
