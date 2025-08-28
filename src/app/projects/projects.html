@@ -28,6 +28,21 @@
         <h4>📝 Texte transcrit :</h4>
         <p>{{ transcription }}</p>
       </div>
+
+      <div class="transcription-box-button" *ngIf="transcription">
+        <button (click)="createTask()" [disabled]="loading">
+          <span *ngIf="!loading">Create Task</span>
+          <span *ngIf="loading" class="spinner"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ✅ Success or ❌ Error message -->
+    <div *ngIf="successMessage" class="alert success">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="alert error">
+      {{ errorMessage }}
     </div>
 
     <div class="card-2">

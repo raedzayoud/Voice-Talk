@@ -21,8 +21,9 @@ export class Projects implements OnInit {
   private mediaRecorder!: MediaRecorder;
   private audioChunks: BlobPart[] = [];
   transcription: string = '';
+  successMessage: any;
+  errorMessage: any;
   showSnackbar: boolean = false;
-
   loadingGemni: boolean = false;
 
   constructor(
@@ -67,6 +68,7 @@ export class Projects implements OnInit {
       },
     });
   }
+
   async startRecording() {
     this.audioChunks = [];
     this.transcription = '';
@@ -113,6 +115,38 @@ export class Projects implements OnInit {
       };
 
       this.mediaRecorder.stop();
+
+      // ✅ stop microphone stream
+      this.mediaRecorder.stream.getTracks().forEach((track) => track.stop());
+    });
+  }
+
+  createTask() {
+    this.loading = true;
+
+    this.projectService.askGemini(this.transcription).subscribe({
+      next: (response: any) => {
+        this.loading = false;
+        this.successMessage =
+          response.message || '✅ Task created successfully!';
+        this.errorMessage = null;
+
+        // Optional: clear transcription
+        // this.transcription = '';
+      },
+      error: (error) => {
+        console.error(error);
+        this.loading = false;
+
+        // Safely extract backend message
+        if (error.error && error.error.error) {
+          this.errorMessage = '❌ ' + error.error.error;
+        } else {
+          this.errorMessage = '❌ ' + (error.message || 'An error occurred');
+        }
+
+        this.successMessage = null;
+      },
     });
   }
 }

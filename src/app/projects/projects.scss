@@ -283,3 +283,57 @@
   transform: translateY(1px);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
+
+.transcription-box-button button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: rgb(58, 134, 235);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.transcription-box-button {
+  display: flex;
+  justify-content: flex-end; /* push button to the right */
+  margin-top: 10px; /* optional spacing */
+}
+
+/* Spinner */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Alerts */
+.alert {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.alert.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.alert.error {
+  background: #f8d7da;
+  color: #721c24;
+}
