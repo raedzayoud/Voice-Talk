@@ -16,11 +16,19 @@
           <div class="mic-button">
             <i class="fa fa-microphone"></i>
           </div>
-          <button class="voice-button">Send To Gemini</button>
+          <button class="voice-button">Gemini Text</button>
+        </div>
+        <div class="transcription-box-button" *ngIf="transcription">
+          <button (click)="createTask()" [disabled]="loadingGemni">
+            <span *ngIf="!loadingGemni">Create Task</span>
+            <span *ngIf="loadingGemni" class="spinner"></span>
+          </button>
         </div>
       </div>
       <div class="card-2">
-        <div class="exemple">💡 Exemples : Planifie réunion [titre]"</div>
+        <div class="exemple">
+          💡 Exemples : Create a meeting with John tomorrow at 2PM
+        </div>
       </div>
     </div>
 
@@ -35,7 +43,12 @@
           Discussion sur l’avancement du projet mobile et répartition des
           nouvelles tâches.
         </div>
-        <a href="#" class="btn-join">Rejoindre</a>
+        <a
+          href="https://meet.jit.si/+meering.code"
+          class="btn-join"
+          target="_blank"
+          >Rejoindre</a
+        >
       </div>
 
       <!-- Réunion 2 -->
