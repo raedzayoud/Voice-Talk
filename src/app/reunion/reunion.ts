@@ -34,24 +34,34 @@ export class Reunion implements OnInit {
 
   /** ✅ Create meeting with validation */
   createMeeting() {
-    // if (!this.prompt.trim()) {
-    //   this.messageFalse = '⚠️ Please enter a meeting prompt before creating.';
-    //   this.messageSuccess = '';
-    //   return;
-    // }
+    this.prompt = this.transcription;
+    if (!this.prompt || !this.prompt.trim()) {
+      this.messageFalse = '⚠️ Please enter a meeting prompt before creating.';
+      this.messageSuccess = '';
+      return;
+    }
+
+    this.loadingGemni = true;
+
+    // Normalise les formats AM/PM avec des espaces possibles
+    this.prompt = this.prompt
+      .replace(/\b([0-9]{1,2})\s*([AaPp])\s*([Mm])\b/g, '$1$2$3')
+      .trim();
 
     this.meetingService.createMeeting(this.prompt).subscribe({
       next: (response: any) => {
         this.messageSuccess =
           response?.message || '✅ Meeting created successfully';
         this.messageFalse = '';
-        this.prompt = ''; // reset input
-        this.getAllByUserMeeting(); // refresh list
+        this.prompt = '';
+        this.getAllByUserMeeting();
+        this.loadingGemni = false;
       },
       error: (error) => {
         console.error('Error creating meeting:', error);
         this.messageFalse = '❌ Failed to create meeting';
         this.messageSuccess = '';
+        this.loadingGemni = false;
       },
     });
   }

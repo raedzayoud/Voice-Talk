@@ -13,17 +13,38 @@
         <small>Dites "Planifie réunion [titre]"</small>
 
         <div class="mic-container">
-          <div class="mic-button">
+          <div class="mic-button" (click)="startRecording()">
             <i class="fa fa-microphone"></i>
           </div>
-          <button class="voice-button">Gemini Text</button>
+          <button class="voice-button" (click)="stopRecording()">
+            Gemini Text
+          </button>
+          <span *ngIf="loadingGemni" class="loading-text"
+            >Transcription en cours...</span
+          >
         </div>
+
+        <!-- 🎤 Résultat transcription -->
+        <div class="transcription-box" *ngIf="transcription">
+          <h4>📝 Texte transcrit :</h4>
+          <p>{{ transcription }}</p>
+        </div>
+
         <div class="transcription-box-button" *ngIf="transcription">
           <button (click)="createMeeting()" [disabled]="loadingGemni">
-            <span *ngIf="!loadingGemni">Create Meeting</span>
+            <span *ngIf="!loadingGemni" class="createMeeting">
+              Create Meeting
+            </span>
             <span *ngIf="loadingGemni" class="spinner"></span>
           </button>
         </div>
+      </div>
+
+      <div *ngIf="messageSuccess" class="alert success">
+        {{ messageSuccess }}
+      </div>
+      <div *ngIf="messageFalse" class="alert error">
+        {{ messageFalse }}
       </div>
       <div class="card-2">
         <div class="exemple">
@@ -43,11 +64,14 @@
           📆 {{ meet.start_time || "Date non définie" }}
         </div>
         <div class="meeting-description">
+          <strong>Description</strong> :
           {{ meet.description || "Aucune description fournie" }}
         </div>
         <div class="meeting-code">
-          Code Meeting : {{ meet.room || "Aucun code fourni" }}
+          <strong> Code Meeting</strong> :
+          {{ meet.room || "Aucun code fourni" }}
         </div>
+        <br />
         <a
           *ngIf="meet.room"
           [href]="'https://meet.jit.si/' + meet.room"
