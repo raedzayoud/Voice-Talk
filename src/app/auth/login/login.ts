@@ -27,7 +27,13 @@ export class Login {
     this.router.navigate(['singup']);
   }
 
-  Login() {
+  Login(form: any) {
+    if (form.invalid) {
+      // Mark all fields as touched to show validation errors
+      form.control.markAllAsTouched();
+      //   return;
+    }
+
     this.loading = true;
     this.authservice.login(this.email, this.password).subscribe({
       next: (response: any) => {
@@ -37,11 +43,10 @@ export class Login {
           this.snackBar.open(response.message, 'Close', {
             duration: 3000,
             verticalPosition: 'top',
-            panelClass: ['error-snackbar'], // custom style
+            panelClass: ['error-snackbar'],
           });
         } else {
           localStorage.setItem('token', response.token);
-          //   alert(localStorage.getItem('token'));
           this.snackBar.open('✅ ' + response.message, 'OK', {
             duration: 3000,
             panelClass: ['success-snackbar'],
