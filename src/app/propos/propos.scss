@@ -274,7 +274,11 @@
     font-size: 1.1rem;
   }
   .buttons {
-    margin: 0 50px;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin: 0 100px;
+    width: 40%;
   }
   .container-banner {
     width: auto;
