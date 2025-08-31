@@ -1,97 +1,99 @@
 <app-menu></app-menu>
-<div class="container-section">
-  <section class="about">
-    <h1>A propos de VoiceTask</h1>
-    <p class="subtitle">
-      Nous révolutionnons la productivité en rendant la gestion de tâches aussi
-      simple qu'une conversation.
-    </p>
+<div class="all">
+  <div class="container-section">
+    <section class="about">
+      <h1>A propos de VoiceTask</h1>
+      <p class="subtitle">
+        Nous révolutionnons la productivité en rendant la gestion de tâches
+        aussi simple qu'une conversation.
+      </p>
 
-    <div class="about-container">
-      <!-- Texte gauche -->
-      <div class="about-text">
-        <h2>Notre Mission</h2>
-        <p>
-          Chez VoiceTask, nous croyons que la technologie doit simplifier la
-          vie. Notre mission est de transformer la façon dont les professionnels
-          gèrent leurs tâches quotidiennes.
-        </p>
-        <p>
-          Nous voulons éliminer les frictions entre l'idée et l'action,
-          permettant à chacun de se concentrer sur ce qui compte vraiment.
-        </p>
-        <button routerLink="/contact" class="contact-btn">
-          Nous contacter →
-        </button>
+      <div class="about-container">
+        <!-- Texte gauche -->
+        <div class="about-text">
+          <h2>Notre Mission</h2>
+          <p>
+            Chez VoiceTask, nous croyons que la technologie doit simplifier la
+            vie. Notre mission est de transformer la façon dont les
+            professionnels gèrent leurs tâches quotidiennes.
+          </p>
+          <p>
+            Nous voulons éliminer les frictions entre l'idée et l'action,
+            permettant à chacun de se concentrer sur ce qui compte vraiment.
+          </p>
+          <button routerLink="/contact" class="contact-btn">
+            Nous contacter →
+          </button>
+        </div>
+
+        <!-- Stats droite -->
+        <div class="about-stats">
+          <div class="stat">
+            <h3 class="blue">2024</h3>
+            <p>Année de création</p>
+          </div>
+          <div class="stat">
+            <h3 class="purple">10K+</h3>
+            <p>Utilisateurs actifs</p>
+          </div>
+          <div class="stat">
+            <h3 class="green">95%</h3>
+            <p>Satisfaction client</p>
+          </div>
+          <div class="stat">
+            <h3 class="orange">24/7</h3>
+            <p>Support disponible</p>
+          </div>
+        </div>
       </div>
+    </section>
+  </div>
 
-      <!-- Stats droite -->
-      <div class="about-stats">
-        <div class="stat">
-          <h3 class="blue">2024</h3>
-          <p>Année de création</p>
-        </div>
-        <div class="stat">
-          <h3 class="purple">10K+</h3>
-          <p>Utilisateurs actifs</p>
-        </div>
-        <div class="stat">
-          <h3 class="green">95%</h3>
-          <p>Satisfaction client</p>
-        </div>
-        <div class="stat">
-          <h3 class="orange">24/7</h3>
-          <p>Support disponible</p>
-        </div>
+  <div class="section-2">
+    <h2>Nos Valeurs</h2>
+    <div class="containers">
+      <div class="card-container">
+        <h4>Innovation</h4>
+        <p>
+          Nous repoussons les limites <br />
+          de la technologie
+        </p>
       </div>
-    </div>
-  </section>
-</div>
-
-<div class="section-2">
-  <h2>Nos Valeurs</h2>
-  <div class="containers">
-    <div class="card-container">
-      <h4>Innovation</h4>
-      <p>
-        Nous repoussons les limites <br />
-        de la technologie
-      </p>
-    </div>
-    <div class="card-container">
-      <h4>Utilisateur d'abord</h4>
-      <p>
-        Chaque décision pense à <br />
-        l'expérience utilisateur
-      </p>
-    </div>
-    <div class="card-container">
-      <h4>Excellence</h4>
-      <p>
-        Nous visons la perfection <br />
-        dans chaque détail
-      </p>
-    </div>
-    <div class="card-container">
-      <h4>Transparence</h4>
-      <p>
-        Communication ouverte <br />
-        et honnête
-      </p>
+      <div class="card-container">
+        <h4>Utilisateur d'abord</h4>
+        <p>
+          Chaque décision pense à <br />
+          l'expérience utilisateur
+        </p>
+      </div>
+      <div class="card-container">
+        <h4>Excellence</h4>
+        <p>
+          Nous visons la perfection <br />
+          dans chaque détail
+        </p>
+      </div>
+      <div class="card-container">
+        <h4>Transparence</h4>
+        <p>
+          Communication ouverte <br />
+          et honnête
+        </p>
+      </div>
     </div>
   </div>
-</div>
-<div class="container-banner">
-  <div class="banner">
-    <h1>Rejoignez la Révolution Vocale</h1>
-    <p>Découvrez comment VoiceTask peut transformer votre productivité</p>
-    <div class="buttons">
-      <a (click)="goToEssayer()" class="btn btn-primary"
-        >Essayer Gratuitement</a
-      >
-      <a routerLink="/contact" class="btn btn-secondary">Nous Contacter</a>
+  <div class="container-banner">
+    <div class="banner">
+      <h1>Rejoignez la Révolution Vocale</h1>
+      <p>Découvrez comment VoiceTask peut transformer votre productivité</p>
+      <div class="buttons">
+        <a (click)="goToEssayer()" class="btn btn-primary"
+          >Essayer Gratuitement</a
+        >
+        <a routerLink="/contact" class="btn btn-secondary">Nous Contacter</a>
+      </div>
     </div>
   </div>
+  <br />
+  <app-footer></app-footer>
 </div>
-<br />
-<app-footer></app-footer>
