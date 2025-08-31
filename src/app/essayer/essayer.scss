@@ -111,3 +111,10 @@
 app-footer {
   margin-top: auto;
 }
+
+@media (max-width: 500px) {
+  .buttons-container {
+    flex-direction: column;
+    margin: 0 50px;
+  }
+}

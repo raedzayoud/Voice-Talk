@@ -337,3 +337,69 @@
   background: #f8d7da;
   color: #721c24;
 }
+/* =================== */
+/* Responsive Design */
+/* =================== */
+@media (max-width: 900px) {
+  .card,
+  .card.project,
+  .card-project {
+    width: 100%; /* ✅ prend toute la largeur dispo */
+    max-width: 100%; /* ✅ évite les débordements */
+    padding: 15px; /* ✅ padding plus compact */
+  }
+
+  .demo h1 {
+    font-size: 2rem; /* ✅ un peu réduit */
+  }
+
+  .mic-button {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 600px) {
+  .demo h1 {
+    font-size: 1.6rem;
+  }
+
+  .card h3,
+  .card.project h3 {
+    font-size: 1rem;
+  }
+
+  .card.project p {
+    font-size: 0.9rem;
+  }
+
+  .card-p-button {
+    flex-direction: column; /* ✅ description au-dessus du bouton */
+    align-items: flex-start;
+  }
+
+  .voice-button,
+  .transcription-box-button button {
+    width: 40%; /* ✅ boutons plein écran */
+    text-align: center;
+  }
+  .add {
+    width: 50%; /* ✅ boutons plein écran */
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .demo h1 {
+    font-size: 1.3rem;
+  }
+
+  .mic-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card-project {
+    padding: 12px;
+  }
+}

@@ -127,3 +127,66 @@
   flex: 0.95; /* prend tout l'espace restant */
   word-break: break-word; /* texte qui déborde à la ligne si nécessaire */
 }
+
+/* =================== */
+/* Responsive Design */
+/* =================== */
+@media (max-width: 900px) {
+  .card.project {
+    width: 100%; /* ✅ prend toute la largeur */
+    max-width: 100%; /* ✅ évite débordements */
+    padding: 15px; /* ✅ padding réduit */
+  }
+
+  .container-essayer {
+    padding: 20px; /* ✅ moins d’espace sur tablette */
+  }
+
+  .container-essayer > h1 {
+    font-size: 1.8rem; /* ✅ réduit légèrement */
+  }
+}
+
+@media (max-width: 600px) {
+  .container-essayer {
+    margin-top: 40px; /* ✅ espace réduit en haut */
+  }
+
+  .container-essayer > h1 {
+    font-size: 1.5rem;
+  }
+
+  .container-essayer > p {
+    font-size: 0.9rem;
+  }
+
+  .card.project h3 {
+    font-size: 1rem;
+  }
+
+  .card-p-button {
+    flex-direction: column; /* ✅ texte au-dessus du bouton */
+    align-items: flex-start;
+    gap: 10px; /* ✅ petit espace */
+  }
+
+  .add,
+  .delete {
+    width: 100%; /* ✅ boutons full-width sur mobile */
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .container-essayer > h1 {
+    font-size: 1.2rem;
+  }
+
+  .card.project {
+    padding: 12px; /* ✅ encore plus compact */
+  }
+
+  .card-p-button p {
+    font-size: 0.85rem;
+  }
+}
