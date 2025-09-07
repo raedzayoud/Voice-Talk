@@ -10,9 +10,7 @@ export class GeminiService {
 
   constructor() {
     // ⚠️ Mets ta vraie API Key ici
-    this.genAI = new GoogleGenerativeAI(
-      'AIzaSyBWXVrWX2OjkTGiJADOaU0p7JsMIy8Z6tU'
-    );
+    this.genAI = new GoogleGenerativeAI('');
   }
 
   async transcribeAudio(
