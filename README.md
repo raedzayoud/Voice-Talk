@@ -2,7 +2,7 @@
 
 Before cloning the project, make sure to obtain your **Google Gemini API key** from the official [Gemini API site](https://ai.google.dev/).  
 
-After cloning, open the **Gemini service class** in the project and replace the placeholder string with your own API key:  
+After cloning, open the **Gemini service class** in the project and replace the placeholder string with your own API key
 
 
 
